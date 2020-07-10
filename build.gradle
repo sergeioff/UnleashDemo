@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.pogorelovs.unleash'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    compile group: 'no.finn.unleash', name: 'unleash-client-java', version: '3.3.3'
+
+    // used log4j because unleash depends on it
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.3'
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha1'
+
+}
