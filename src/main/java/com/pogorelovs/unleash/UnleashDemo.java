@@ -14,11 +14,14 @@ public class UnleashDemo {
 
     static final Logger logger = LoggerFactory.getLogger(UnleashDemo.class);
 
+    private static final int FETCH_INTERVAL_SECONDS = 2;
+
     public static void main(String[] args) throws InterruptedException {
         var unleashConfig = UnleashConfig.builder()
                 .appName("UnleashDemo")
                 .instanceId("Instance 1")
                 .unleashAPI("http://127.0.0.1:4242/api")
+                .fetchTogglesInterval(FETCH_INTERVAL_SECONDS)
                 .subscriber(new UnleashSubscriber() {
                     @Override
                     public void togglesFetched(FeatureToggleResponse toggleResponse) {
@@ -45,7 +48,7 @@ public class UnleashDemo {
                 break;
             }
 
-            Thread.sleep(10 * 1000);
+            Thread.sleep(FETCH_INTERVAL_SECONDS * 1000);
         }
 
         unleash.shutdown();
