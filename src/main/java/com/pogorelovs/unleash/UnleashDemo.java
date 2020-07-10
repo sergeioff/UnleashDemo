@@ -14,7 +14,7 @@ public class UnleashDemo {
 
     static final Logger logger = LoggerFactory.getLogger(UnleashDemo.class);
 
-    private static final int FETCH_INTERVAL_SECONDS = 2;
+    private static final int FETCH_INTERVAL_SECONDS = 5;
 
     public static void main(String[] args) throws InterruptedException {
         var unleashConfig = UnleashConfig.builder()
