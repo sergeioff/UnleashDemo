@@ -2,7 +2,7 @@
 Unleash feature toggle demo
 
 ## Start infrastructure
-```docker-compose up```
+```docker-compose up -d```
 
 _Note: requires Docker and docker-compose_
 
