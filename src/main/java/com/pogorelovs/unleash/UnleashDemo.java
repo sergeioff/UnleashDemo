@@ -1,6 +1,7 @@
 package com.pogorelovs.unleash;
 
 import no.finn.unleash.DefaultUnleash;
+import no.finn.unleash.UnleashException;
 import no.finn.unleash.event.UnleashSubscriber;
 import no.finn.unleash.repository.FeatureToggleResponse;
 import no.finn.unleash.util.UnleashConfig;
@@ -26,6 +27,11 @@ public class UnleashDemo {
                     @Override
                     public void togglesFetched(FeatureToggleResponse toggleResponse) {
                         logger.info("Fetched toggles");
+                    }
+
+                    @Override
+                    public void onError(UnleashException unleashException) {
+                        logger.info("Error: {}", unleashException.getMessage());
                     }
                 })
                 .build();
