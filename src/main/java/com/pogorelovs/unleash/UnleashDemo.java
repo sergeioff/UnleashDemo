@@ -36,8 +36,6 @@ public class UnleashDemo {
                 })
                 .build();
 
-
-
         var unleash = new DefaultUnleash(unleashConfig);
 
         while (true) {
