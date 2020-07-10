@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=unleash
+      - POSTGRES_PASSWORD=mysecretpassword
+  unleash:
+    image: unleashorg/unleash-server
+    environment: 
+      - DATABASE_URL=postgres://postgres:mysecretpassword@postgres:5432/unleash
+    restart: on-failure
+    ports:
+      - "4242:4242"
