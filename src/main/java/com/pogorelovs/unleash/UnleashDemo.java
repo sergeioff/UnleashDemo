@@ -14,7 +14,6 @@ public class UnleashDemo {
 
     static final Logger logger = LoggerFactory.getLogger(UnleashDemo.class);
 
-
     public static void main(String[] args) throws InterruptedException {
         var unleashConfig = UnleashConfig.builder()
                 .appName("UnleashDemo")
